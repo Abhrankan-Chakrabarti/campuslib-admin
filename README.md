@@ -1,30 +1,40 @@
-# Geometric Admin Dashboard
+# CampusLib Admin
 
-A lightweight React + Vite admin dashboard for a library management system. The app is built with TypeScript, React 19, Vite, Tailwind CSS and Lucide icons, and uses seeded client-side data for books, members, and issue history.
+> A lightweight admin dashboard for campus library management — built with React 19, TypeScript, Vite, and Tailwind CSS.
+
+![React](https://img.shields.io/badge/React-19-61dafb?logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.5-3178c6?logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-5-646cff?logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-38bdf8?logo=tailwindcss&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+---
 
 ## Features
 
-- Dashboard view with stock stats, active issues, overdue alerts, and recent transactions
-- Issue new books by member ID and book number
-- Return issued books with fine calculation
+- Dashboard with live stock stats, active issues, and overdue alerts
+- Issue books by member ID and book number
+- Return issued books with automatic fine calculation (₹2/day post-grace)
 - Searchable book inventory
 - Member directory and records view
 - Full issue history with status badges and return tracking
-- Toast notifications for actions and errors
+- Toast notifications for all actions and validation errors
 
 ## Tech stack
 
-- React 19
-- TypeScript
-- Vite
-- Tailwind CSS
-- Lucide React icons
+| Tool | Version |
+|---|---|
+| React | 19 |
+| TypeScript | 5.5 |
+| Vite | 5 |
+| Tailwind CSS | 3 |
+| Lucide React | 0.468+ |
 
 ## Getting started
 
 ### Prerequisites
 
-- Node.js 18+ (or compatible)
+- Node.js 18+
 
 ### Install dependencies
 
@@ -38,13 +48,23 @@ npm install
 npm run dev
 ```
 
-The app will be served by Vite, by default on port `3000`.
+Served by Vite on [http://localhost:3000](http://localhost:3000).
+
+### Type-check
+
+```bash
+npm run lint
+```
+
+Runs `tsc --noEmit` — no files are emitted, only type errors are reported.
 
 ### Build for production
 
 ```bash
 npm run build
 ```
+
+Output is written to `dist/`. Type-checking runs as part of the build.
 
 ### Preview production build
 
@@ -56,20 +76,25 @@ npm run preview
 
 ```
 .
-├── index.html
+├── index.html               ← Vite HTML entry
 ├── package.json
-├── postcss.config.js
-├── tailwind.config.js
-├── tsconfig.json
 ├── vite.config.ts
+├── tsconfig.json
+├── tailwind.config.js
+├── postcss.config.js
+├── .gitignore
 └── src/
-    ├── App.tsx      ← main dashboard app and view routing
-    ├── main.tsx     ← React entrypoint
-    └── index.css    ← global styles and Tailwind import
+    ├── App.tsx              ← dashboard, all views, and view routing
+    ├── main.tsx             ← React 19 createRoot entrypoint
+    └── index.css            ← Tailwind directives + global styles
 ```
 
 ## Notes
 
-- The app uses local seed data in `src/App.tsx` and does not require an API key or backend server.
-- Data changes are stored only in memory during the current browser session.
-- `npm run lint` runs TypeScript type checking with `tsc --noEmit`.
+- All data is seeded client-side in `src/App.tsx` — no backend or API key required.
+- State is held in memory; changes reset on page refresh.
+- The project is intentionally kept single-file (`App.tsx`) for simplicity. Split into separate component files as the codebase grows.
+
+## License
+
+[MIT](LICENSE)
