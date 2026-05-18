@@ -8,6 +8,8 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-38bdf8?logo=tailwindcss&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
+**Specification:** See [SPECIFICATION.md](SPECIFICATION.md) for the original academic brief and detailed rules.
+
 ---
 
 ## Features
